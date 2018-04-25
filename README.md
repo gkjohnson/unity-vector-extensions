@@ -1,4 +1,4 @@
-# unit-vector-extensions
+# unity-vector-extensions
 Vector extensions to add hlsl-like functionality, like derivative vector getter functions.
 
 ## TODO
