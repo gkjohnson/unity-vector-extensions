@@ -1,5 +1,9 @@
 const fs = require('fs');
 
+// Returns an array of arrays with all the combinations of
+// vector elements -- xyz, zyx, xxyy, etc
+// els: an array of elements to generate the combinations for -- ['x', 'y', 'z']
+// ct: the final number of elements in the arrays to be generated
 function getElementCombinations(els, ct, currarr = []) {
 
     if (currarr.length == ct) return [currarr];
@@ -12,6 +16,9 @@ function getElementCombinations(els, ct, currarr = []) {
     return res;
 }
 
+// Creates a function based on the elements and size of vector being used
+// ex:
+// public static Vector2 xx(this Vector3 v) { return new Vector2(v.x, v.x); }
 function elementsToFunction(els, size) {
 
     const thisvec = `Vector${ size }`;
