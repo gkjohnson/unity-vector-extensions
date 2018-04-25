@@ -1,7 +1,7 @@
 
 /*
  * @author Garrett Johnson <garrett.kjohnson@gmail.com>
- * https://github.com/gkjohnson/unit-vector-extensions
+ * https://github.com/gkjohnson/unity-vector-extensions
  *
  * Generated Unity Vector extension file
  */
