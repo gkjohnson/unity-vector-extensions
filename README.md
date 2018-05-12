@@ -50,6 +50,10 @@ UnityEngine.Vector3 a = new ShaderTypes.Vector3(2, 2);
 ShaderTypes.Vector3 b = new UnityEngine.Vector3(1, 1);
 ```
 
+## Regenerating ShaderVectorTypes.cs
+
+Run `node generate-ShaderVectorTypes` in the repository root.
+
 ## TODO
 - [ ] Add some HLSL functions?
 - [ ] Add extensions for colors? (`c.rr`, `c.grb`, etc)
