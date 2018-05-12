@@ -57,5 +57,3 @@ Run `node generate-ShaderVectorTypes` in the repository root.
 ## TODO
 - [ ] Add some HLSL functions?
 - [ ] Add extensions for colors? (`c.rr`, `c.grb`, etc)
-- [ ] Add equality operator
-- [ ] Add partial constructors

@@ -55,6 +55,7 @@ function generateConstructors(els) {
         if (ct == 0) return [arr];
 
         const res = [];
+        if (arr.length !== 0) res.push(arr);
         for (let i = 1; i <= ct; i ++) {
             res.push(...getArgLengthArray(ct - i, [...arr, i]));
         }
@@ -91,6 +92,11 @@ function generateConstructors(els) {
                 }
 
             });
+
+            while (curr < els.length) {
+                cons += `${ rawfields[curr] } = 0; `;
+                curr ++;
+            }
 
             cons += '}';
             return cons;
@@ -135,6 +141,8 @@ ${ generateConstructors(fields).map(c => '        ' + c).join('\n') }
 ${ operators.map(op => '        ' + toOperatorFunction(fields, op)).join('\n') }
         public static Vector${ i } operator *(Vector${ i } v, float d) { ${ fields.map(f => `v.${ f } *= d; `).join('') }return v; }
         public static Vector${ i } operator /(Vector${ i } v, float d) { ${ fields.map(f => `v.${ f } /= d; `).join('') }return v; }
+        public static bool operator ==(Vector${ i } a, Vector${ i } b) { return a.Equals(b); }
+        public static bool operator !=(Vector${ i } a, Vector${ i } b) { return !a.Equals(b); }
         public static implicit operator Vector${ i }(UnityEngine.Vector${ i } v) { return new Vector${ i }(${ fields.map(f => `v.${ f }`).join(', ') }); }
         public static implicit operator UnityEngine.Vector${ i }(Vector${ i } v) { return new UnityEngine.Vector${ i }(${ fields.map(f => `v.${ f }`).join(', ') }); }
 

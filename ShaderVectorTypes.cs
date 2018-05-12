@@ -11,6 +11,7 @@ namespace ShaderTypes {
         public float x,y;
 
         // constructors
+        public Vector2(float v0) { x = v0; y = 0; }
         public Vector2(float v0, float v1) { x = v0; y = v1; }
         public Vector2(Vector2 v0) { x = v0.x; y = v0.y; }
 
@@ -21,6 +22,8 @@ namespace ShaderTypes {
         public static Vector2 operator /(Vector2 a, Vector2 b) { a.x /= b.x; a.y /= b.y; return a; }
         public static Vector2 operator *(Vector2 v, float d) { v.x *= d; v.y *= d; return v; }
         public static Vector2 operator /(Vector2 v, float d) { v.x /= d; v.y /= d; return v; }
+        public static bool operator ==(Vector2 a, Vector2 b) { return a.Equals(b); }
+        public static bool operator !=(Vector2 a, Vector2 b) { return !a.Equals(b); }
         public static implicit operator Vector2(UnityEngine.Vector2 v) { return new Vector2(v.x, v.y); }
         public static implicit operator UnityEngine.Vector2(Vector2 v) { return new UnityEngine.Vector2(v.x, v.y); }
 
@@ -61,8 +64,11 @@ namespace ShaderTypes {
         public float x,y,z;
 
         // constructors
+        public Vector3(float v0) { x = v0; y = 0; z = 0; }
+        public Vector3(float v0, float v1) { x = v0; y = v1; z = 0; }
         public Vector3(float v0, float v1, float v2) { x = v0; y = v1; z = v2; }
         public Vector3(float v0, Vector2 v1) { x = v0; y = v1.x; z = v1.y; }
+        public Vector3(Vector2 v0) { x = v0.x; y = v0.y; z = 0; }
         public Vector3(Vector2 v0, float v1) { x = v0.x; y = v0.y; z = v1; }
         public Vector3(Vector3 v0) { x = v0.x; y = v0.y; z = v0.z; }
 
@@ -73,6 +79,8 @@ namespace ShaderTypes {
         public static Vector3 operator /(Vector3 a, Vector3 b) { a.x /= b.x; a.y /= b.y; a.z /= b.z; return a; }
         public static Vector3 operator *(Vector3 v, float d) { v.x *= d; v.y *= d; v.z *= d; return v; }
         public static Vector3 operator /(Vector3 v, float d) { v.x /= d; v.y /= d; v.z /= d; return v; }
+        public static bool operator ==(Vector3 a, Vector3 b) { return a.Equals(b); }
+        public static bool operator !=(Vector3 a, Vector3 b) { return !a.Equals(b); }
         public static implicit operator Vector3(UnityEngine.Vector3 v) { return new Vector3(v.x, v.y, v.z); }
         public static implicit operator UnityEngine.Vector3(Vector3 v) { return new UnityEngine.Vector3(v.x, v.y, v.z); }
 
@@ -202,12 +210,19 @@ namespace ShaderTypes {
         public float x,y,z,w;
 
         // constructors
+        public Vector4(float v0) { x = v0; y = 0; z = 0; w = 0; }
+        public Vector4(float v0, float v1) { x = v0; y = v1; z = 0; w = 0; }
+        public Vector4(float v0, float v1, float v2) { x = v0; y = v1; z = v2; w = 0; }
         public Vector4(float v0, float v1, float v2, float v3) { x = v0; y = v1; z = v2; w = v3; }
         public Vector4(float v0, float v1, Vector2 v2) { x = v0; y = v1; z = v2.x; w = v2.y; }
+        public Vector4(float v0, Vector2 v1) { x = v0; y = v1.x; z = v1.y; w = 0; }
         public Vector4(float v0, Vector2 v1, float v2) { x = v0; y = v1.x; z = v1.y; w = v2; }
         public Vector4(float v0, Vector3 v1) { x = v0; y = v1.x; z = v1.y; w = v1.z; }
+        public Vector4(Vector2 v0) { x = v0.x; y = v0.y; z = 0; w = 0; }
+        public Vector4(Vector2 v0, float v1) { x = v0.x; y = v0.y; z = v1; w = 0; }
         public Vector4(Vector2 v0, float v1, float v2) { x = v0.x; y = v0.y; z = v1; w = v2; }
         public Vector4(Vector2 v0, Vector2 v1) { x = v0.x; y = v0.y; z = v1.x; w = v1.y; }
+        public Vector4(Vector3 v0) { x = v0.x; y = v0.y; z = v0.z; w = 0; }
         public Vector4(Vector3 v0, float v1) { x = v0.x; y = v0.y; z = v0.z; w = v1; }
         public Vector4(Vector4 v0) { x = v0.x; y = v0.y; z = v0.z; w = v0.w; }
 
@@ -218,6 +233,8 @@ namespace ShaderTypes {
         public static Vector4 operator /(Vector4 a, Vector4 b) { a.x /= b.x; a.y /= b.y; a.z /= b.z; a.w /= b.w; return a; }
         public static Vector4 operator *(Vector4 v, float d) { v.x *= d; v.y *= d; v.z *= d; v.w *= d; return v; }
         public static Vector4 operator /(Vector4 v, float d) { v.x /= d; v.y /= d; v.z /= d; v.w /= d; return v; }
+        public static bool operator ==(Vector4 a, Vector4 b) { return a.Equals(b); }
+        public static bool operator !=(Vector4 a, Vector4 b) { return !a.Equals(b); }
         public static implicit operator Vector4(UnityEngine.Vector4 v) { return new Vector4(v.x, v.y, v.z, v.w); }
         public static implicit operator UnityEngine.Vector4(Vector4 v) { return new UnityEngine.Vector4(v.x, v.y, v.z, v.w); }
 
