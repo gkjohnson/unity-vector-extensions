@@ -50,6 +50,22 @@ UnityEngine.Vector3 a = new ShaderTypes.Vector3(2, 2);
 ShaderTypes.Vector3 b = new UnityEngine.Vector3(1, 1);
 ```
 
+## Shader Type Definition Statements
+```cs
+// define common shader types in csharp
+using float4 = ShaderTypes.Vector4;
+using float3 = ShaderTypes.Vector3;
+using float2 = ShaderTypes.Vector2;
+
+using half4 = ShaderTypes.Vector4;
+using half3 = ShaderTypes.Vector3;
+using half2 = ShaderTypes.Vector2;
+
+using fixed4 = ShaderTypes.Vector4;
+using fixed3 = ShaderTypes.Vector3;
+using fixed2 = ShaderTypes.Vector2;
+```
+
 ## Regenerating ShaderVectorTypes.cs
 
 Run `node generate-ShaderVectorTypes` in the repository root.
