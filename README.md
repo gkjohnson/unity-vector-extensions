@@ -69,7 +69,3 @@ using fixed2 = ShaderTypes.Vector2;
 ## Regenerating ShaderVectorTypes.cs
 
 Run `node generate-ShaderVectorTypes` in the repository root.
-
-## TODO
-- [ ] Add some HLSL functions?
-- [ ] Add extensions for colors? (`c.rr`, `c.grb`, etc)
