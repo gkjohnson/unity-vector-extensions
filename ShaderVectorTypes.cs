@@ -10,6 +10,9 @@ namespace ShaderTypes {
     public struct Vector2 {
         public float x,y;
 
+        public float r { get { return this.x; } set { this.x = value; } }
+        public float g { get { return this.y; } set { this.y = value; } }
+
         // constructors
         public Vector2(float v0) { x = v0; y = 0; }
         public Vector2(float v0, float v1) { x = v0; y = v1; }
@@ -34,6 +37,10 @@ namespace ShaderTypes {
         public Vector2 xy { get { return new Vector2(x, y); } set { x = value.x; y = value.y; } }
         public Vector2 yx { get { return new Vector2(y, x); } set { y = value.x; x = value.y; } }
         public Vector2 yy { get { return new Vector2(y, y); } set { y = value.x; y = value.y; } }
+        public Vector2 rr { get { return new Vector2(r, r); } set { r = value.x; r = value.y; } }
+        public Vector2 rg { get { return new Vector2(r, g); } set { r = value.x; g = value.y; } }
+        public Vector2 gr { get { return new Vector2(g, r); } set { g = value.x; r = value.y; } }
+        public Vector2 gg { get { return new Vector2(g, g); } set { g = value.x; g = value.y; } }
         public Vector3 xxx { get { return new Vector3(x, x, x); } set { x = value.x; x = value.y; x = value.z; } }
         public Vector3 xxy { get { return new Vector3(x, x, y); } set { x = value.x; x = value.y; y = value.z; } }
         public Vector3 xyx { get { return new Vector3(x, y, x); } set { x = value.x; y = value.y; x = value.z; } }
@@ -42,6 +49,14 @@ namespace ShaderTypes {
         public Vector3 yxy { get { return new Vector3(y, x, y); } set { y = value.x; x = value.y; y = value.z; } }
         public Vector3 yyx { get { return new Vector3(y, y, x); } set { y = value.x; y = value.y; x = value.z; } }
         public Vector3 yyy { get { return new Vector3(y, y, y); } set { y = value.x; y = value.y; y = value.z; } }
+        public Vector3 rrr { get { return new Vector3(r, r, r); } set { r = value.x; r = value.y; r = value.z; } }
+        public Vector3 rrg { get { return new Vector3(r, r, g); } set { r = value.x; r = value.y; g = value.z; } }
+        public Vector3 rgr { get { return new Vector3(r, g, r); } set { r = value.x; g = value.y; r = value.z; } }
+        public Vector3 rgg { get { return new Vector3(r, g, g); } set { r = value.x; g = value.y; g = value.z; } }
+        public Vector3 grr { get { return new Vector3(g, r, r); } set { g = value.x; r = value.y; r = value.z; } }
+        public Vector3 grg { get { return new Vector3(g, r, g); } set { g = value.x; r = value.y; g = value.z; } }
+        public Vector3 ggr { get { return new Vector3(g, g, r); } set { g = value.x; g = value.y; r = value.z; } }
+        public Vector3 ggg { get { return new Vector3(g, g, g); } set { g = value.x; g = value.y; g = value.z; } }
         public Vector4 xxxx { get { return new Vector4(x, x, x, x); } set { x = value.x; x = value.y; x = value.z; x = value.w; } }
         public Vector4 xxxy { get { return new Vector4(x, x, x, y); } set { x = value.x; x = value.y; x = value.z; y = value.w; } }
         public Vector4 xxyx { get { return new Vector4(x, x, y, x); } set { x = value.x; x = value.y; y = value.z; x = value.w; } }
@@ -58,10 +73,30 @@ namespace ShaderTypes {
         public Vector4 yyxy { get { return new Vector4(y, y, x, y); } set { y = value.x; y = value.y; x = value.z; y = value.w; } }
         public Vector4 yyyx { get { return new Vector4(y, y, y, x); } set { y = value.x; y = value.y; y = value.z; x = value.w; } }
         public Vector4 yyyy { get { return new Vector4(y, y, y, y); } set { y = value.x; y = value.y; y = value.z; y = value.w; } }
+        public Vector4 rrrr { get { return new Vector4(r, r, r, r); } set { r = value.x; r = value.y; r = value.z; r = value.w; } }
+        public Vector4 rrrg { get { return new Vector4(r, r, r, g); } set { r = value.x; r = value.y; r = value.z; g = value.w; } }
+        public Vector4 rrgr { get { return new Vector4(r, r, g, r); } set { r = value.x; r = value.y; g = value.z; r = value.w; } }
+        public Vector4 rrgg { get { return new Vector4(r, r, g, g); } set { r = value.x; r = value.y; g = value.z; g = value.w; } }
+        public Vector4 rgrr { get { return new Vector4(r, g, r, r); } set { r = value.x; g = value.y; r = value.z; r = value.w; } }
+        public Vector4 rgrg { get { return new Vector4(r, g, r, g); } set { r = value.x; g = value.y; r = value.z; g = value.w; } }
+        public Vector4 rggr { get { return new Vector4(r, g, g, r); } set { r = value.x; g = value.y; g = value.z; r = value.w; } }
+        public Vector4 rggg { get { return new Vector4(r, g, g, g); } set { r = value.x; g = value.y; g = value.z; g = value.w; } }
+        public Vector4 grrr { get { return new Vector4(g, r, r, r); } set { g = value.x; r = value.y; r = value.z; r = value.w; } }
+        public Vector4 grrg { get { return new Vector4(g, r, r, g); } set { g = value.x; r = value.y; r = value.z; g = value.w; } }
+        public Vector4 grgr { get { return new Vector4(g, r, g, r); } set { g = value.x; r = value.y; g = value.z; r = value.w; } }
+        public Vector4 grgg { get { return new Vector4(g, r, g, g); } set { g = value.x; r = value.y; g = value.z; g = value.w; } }
+        public Vector4 ggrr { get { return new Vector4(g, g, r, r); } set { g = value.x; g = value.y; r = value.z; r = value.w; } }
+        public Vector4 ggrg { get { return new Vector4(g, g, r, g); } set { g = value.x; g = value.y; r = value.z; g = value.w; } }
+        public Vector4 gggr { get { return new Vector4(g, g, g, r); } set { g = value.x; g = value.y; g = value.z; r = value.w; } }
+        public Vector4 gggg { get { return new Vector4(g, g, g, g); } set { g = value.x; g = value.y; g = value.z; g = value.w; } }
     }
 
     public struct Vector3 {
         public float x,y,z;
+
+        public float r { get { return this.x; } set { this.x = value; } }
+        public float g { get { return this.y; } set { this.y = value; } }
+        public float b { get { return this.z; } set { this.z = value; } }
 
         // constructors
         public Vector3(float v0) { x = v0; y = 0; z = 0; }
@@ -96,6 +131,15 @@ namespace ShaderTypes {
         public Vector2 zx { get { return new Vector2(z, x); } set { z = value.x; x = value.y; } }
         public Vector2 zy { get { return new Vector2(z, y); } set { z = value.x; y = value.y; } }
         public Vector2 zz { get { return new Vector2(z, z); } set { z = value.x; z = value.y; } }
+        public Vector2 rr { get { return new Vector2(r, r); } set { r = value.x; r = value.y; } }
+        public Vector2 rg { get { return new Vector2(r, g); } set { r = value.x; g = value.y; } }
+        public Vector2 rb { get { return new Vector2(r, b); } set { r = value.x; b = value.y; } }
+        public Vector2 gr { get { return new Vector2(g, r); } set { g = value.x; r = value.y; } }
+        public Vector2 gg { get { return new Vector2(g, g); } set { g = value.x; g = value.y; } }
+        public Vector2 gb { get { return new Vector2(g, b); } set { g = value.x; b = value.y; } }
+        public Vector2 br { get { return new Vector2(b, r); } set { b = value.x; r = value.y; } }
+        public Vector2 bg { get { return new Vector2(b, g); } set { b = value.x; g = value.y; } }
+        public Vector2 bb { get { return new Vector2(b, b); } set { b = value.x; b = value.y; } }
         public Vector3 xxx { get { return new Vector3(x, x, x); } set { x = value.x; x = value.y; x = value.z; } }
         public Vector3 xxy { get { return new Vector3(x, x, y); } set { x = value.x; x = value.y; y = value.z; } }
         public Vector3 xxz { get { return new Vector3(x, x, z); } set { x = value.x; x = value.y; z = value.z; } }
@@ -123,6 +167,33 @@ namespace ShaderTypes {
         public Vector3 zzx { get { return new Vector3(z, z, x); } set { z = value.x; z = value.y; x = value.z; } }
         public Vector3 zzy { get { return new Vector3(z, z, y); } set { z = value.x; z = value.y; y = value.z; } }
         public Vector3 zzz { get { return new Vector3(z, z, z); } set { z = value.x; z = value.y; z = value.z; } }
+        public Vector3 rrr { get { return new Vector3(r, r, r); } set { r = value.x; r = value.y; r = value.z; } }
+        public Vector3 rrg { get { return new Vector3(r, r, g); } set { r = value.x; r = value.y; g = value.z; } }
+        public Vector3 rrb { get { return new Vector3(r, r, b); } set { r = value.x; r = value.y; b = value.z; } }
+        public Vector3 rgr { get { return new Vector3(r, g, r); } set { r = value.x; g = value.y; r = value.z; } }
+        public Vector3 rgg { get { return new Vector3(r, g, g); } set { r = value.x; g = value.y; g = value.z; } }
+        public Vector3 rgb { get { return new Vector3(r, g, b); } set { r = value.x; g = value.y; b = value.z; } }
+        public Vector3 rbr { get { return new Vector3(r, b, r); } set { r = value.x; b = value.y; r = value.z; } }
+        public Vector3 rbg { get { return new Vector3(r, b, g); } set { r = value.x; b = value.y; g = value.z; } }
+        public Vector3 rbb { get { return new Vector3(r, b, b); } set { r = value.x; b = value.y; b = value.z; } }
+        public Vector3 grr { get { return new Vector3(g, r, r); } set { g = value.x; r = value.y; r = value.z; } }
+        public Vector3 grg { get { return new Vector3(g, r, g); } set { g = value.x; r = value.y; g = value.z; } }
+        public Vector3 grb { get { return new Vector3(g, r, b); } set { g = value.x; r = value.y; b = value.z; } }
+        public Vector3 ggr { get { return new Vector3(g, g, r); } set { g = value.x; g = value.y; r = value.z; } }
+        public Vector3 ggg { get { return new Vector3(g, g, g); } set { g = value.x; g = value.y; g = value.z; } }
+        public Vector3 ggb { get { return new Vector3(g, g, b); } set { g = value.x; g = value.y; b = value.z; } }
+        public Vector3 gbr { get { return new Vector3(g, b, r); } set { g = value.x; b = value.y; r = value.z; } }
+        public Vector3 gbg { get { return new Vector3(g, b, g); } set { g = value.x; b = value.y; g = value.z; } }
+        public Vector3 gbb { get { return new Vector3(g, b, b); } set { g = value.x; b = value.y; b = value.z; } }
+        public Vector3 brr { get { return new Vector3(b, r, r); } set { b = value.x; r = value.y; r = value.z; } }
+        public Vector3 brg { get { return new Vector3(b, r, g); } set { b = value.x; r = value.y; g = value.z; } }
+        public Vector3 brb { get { return new Vector3(b, r, b); } set { b = value.x; r = value.y; b = value.z; } }
+        public Vector3 bgr { get { return new Vector3(b, g, r); } set { b = value.x; g = value.y; r = value.z; } }
+        public Vector3 bgg { get { return new Vector3(b, g, g); } set { b = value.x; g = value.y; g = value.z; } }
+        public Vector3 bgb { get { return new Vector3(b, g, b); } set { b = value.x; g = value.y; b = value.z; } }
+        public Vector3 bbr { get { return new Vector3(b, b, r); } set { b = value.x; b = value.y; r = value.z; } }
+        public Vector3 bbg { get { return new Vector3(b, b, g); } set { b = value.x; b = value.y; g = value.z; } }
+        public Vector3 bbb { get { return new Vector3(b, b, b); } set { b = value.x; b = value.y; b = value.z; } }
         public Vector4 xxxx { get { return new Vector4(x, x, x, x); } set { x = value.x; x = value.y; x = value.z; x = value.w; } }
         public Vector4 xxxy { get { return new Vector4(x, x, x, y); } set { x = value.x; x = value.y; x = value.z; y = value.w; } }
         public Vector4 xxxz { get { return new Vector4(x, x, x, z); } set { x = value.x; x = value.y; x = value.z; z = value.w; } }
@@ -204,10 +275,96 @@ namespace ShaderTypes {
         public Vector4 zzzx { get { return new Vector4(z, z, z, x); } set { z = value.x; z = value.y; z = value.z; x = value.w; } }
         public Vector4 zzzy { get { return new Vector4(z, z, z, y); } set { z = value.x; z = value.y; z = value.z; y = value.w; } }
         public Vector4 zzzz { get { return new Vector4(z, z, z, z); } set { z = value.x; z = value.y; z = value.z; z = value.w; } }
+        public Vector4 rrrr { get { return new Vector4(r, r, r, r); } set { r = value.x; r = value.y; r = value.z; r = value.w; } }
+        public Vector4 rrrg { get { return new Vector4(r, r, r, g); } set { r = value.x; r = value.y; r = value.z; g = value.w; } }
+        public Vector4 rrrb { get { return new Vector4(r, r, r, b); } set { r = value.x; r = value.y; r = value.z; b = value.w; } }
+        public Vector4 rrgr { get { return new Vector4(r, r, g, r); } set { r = value.x; r = value.y; g = value.z; r = value.w; } }
+        public Vector4 rrgg { get { return new Vector4(r, r, g, g); } set { r = value.x; r = value.y; g = value.z; g = value.w; } }
+        public Vector4 rrgb { get { return new Vector4(r, r, g, b); } set { r = value.x; r = value.y; g = value.z; b = value.w; } }
+        public Vector4 rrbr { get { return new Vector4(r, r, b, r); } set { r = value.x; r = value.y; b = value.z; r = value.w; } }
+        public Vector4 rrbg { get { return new Vector4(r, r, b, g); } set { r = value.x; r = value.y; b = value.z; g = value.w; } }
+        public Vector4 rrbb { get { return new Vector4(r, r, b, b); } set { r = value.x; r = value.y; b = value.z; b = value.w; } }
+        public Vector4 rgrr { get { return new Vector4(r, g, r, r); } set { r = value.x; g = value.y; r = value.z; r = value.w; } }
+        public Vector4 rgrg { get { return new Vector4(r, g, r, g); } set { r = value.x; g = value.y; r = value.z; g = value.w; } }
+        public Vector4 rgrb { get { return new Vector4(r, g, r, b); } set { r = value.x; g = value.y; r = value.z; b = value.w; } }
+        public Vector4 rggr { get { return new Vector4(r, g, g, r); } set { r = value.x; g = value.y; g = value.z; r = value.w; } }
+        public Vector4 rggg { get { return new Vector4(r, g, g, g); } set { r = value.x; g = value.y; g = value.z; g = value.w; } }
+        public Vector4 rggb { get { return new Vector4(r, g, g, b); } set { r = value.x; g = value.y; g = value.z; b = value.w; } }
+        public Vector4 rgbr { get { return new Vector4(r, g, b, r); } set { r = value.x; g = value.y; b = value.z; r = value.w; } }
+        public Vector4 rgbg { get { return new Vector4(r, g, b, g); } set { r = value.x; g = value.y; b = value.z; g = value.w; } }
+        public Vector4 rgbb { get { return new Vector4(r, g, b, b); } set { r = value.x; g = value.y; b = value.z; b = value.w; } }
+        public Vector4 rbrr { get { return new Vector4(r, b, r, r); } set { r = value.x; b = value.y; r = value.z; r = value.w; } }
+        public Vector4 rbrg { get { return new Vector4(r, b, r, g); } set { r = value.x; b = value.y; r = value.z; g = value.w; } }
+        public Vector4 rbrb { get { return new Vector4(r, b, r, b); } set { r = value.x; b = value.y; r = value.z; b = value.w; } }
+        public Vector4 rbgr { get { return new Vector4(r, b, g, r); } set { r = value.x; b = value.y; g = value.z; r = value.w; } }
+        public Vector4 rbgg { get { return new Vector4(r, b, g, g); } set { r = value.x; b = value.y; g = value.z; g = value.w; } }
+        public Vector4 rbgb { get { return new Vector4(r, b, g, b); } set { r = value.x; b = value.y; g = value.z; b = value.w; } }
+        public Vector4 rbbr { get { return new Vector4(r, b, b, r); } set { r = value.x; b = value.y; b = value.z; r = value.w; } }
+        public Vector4 rbbg { get { return new Vector4(r, b, b, g); } set { r = value.x; b = value.y; b = value.z; g = value.w; } }
+        public Vector4 rbbb { get { return new Vector4(r, b, b, b); } set { r = value.x; b = value.y; b = value.z; b = value.w; } }
+        public Vector4 grrr { get { return new Vector4(g, r, r, r); } set { g = value.x; r = value.y; r = value.z; r = value.w; } }
+        public Vector4 grrg { get { return new Vector4(g, r, r, g); } set { g = value.x; r = value.y; r = value.z; g = value.w; } }
+        public Vector4 grrb { get { return new Vector4(g, r, r, b); } set { g = value.x; r = value.y; r = value.z; b = value.w; } }
+        public Vector4 grgr { get { return new Vector4(g, r, g, r); } set { g = value.x; r = value.y; g = value.z; r = value.w; } }
+        public Vector4 grgg { get { return new Vector4(g, r, g, g); } set { g = value.x; r = value.y; g = value.z; g = value.w; } }
+        public Vector4 grgb { get { return new Vector4(g, r, g, b); } set { g = value.x; r = value.y; g = value.z; b = value.w; } }
+        public Vector4 grbr { get { return new Vector4(g, r, b, r); } set { g = value.x; r = value.y; b = value.z; r = value.w; } }
+        public Vector4 grbg { get { return new Vector4(g, r, b, g); } set { g = value.x; r = value.y; b = value.z; g = value.w; } }
+        public Vector4 grbb { get { return new Vector4(g, r, b, b); } set { g = value.x; r = value.y; b = value.z; b = value.w; } }
+        public Vector4 ggrr { get { return new Vector4(g, g, r, r); } set { g = value.x; g = value.y; r = value.z; r = value.w; } }
+        public Vector4 ggrg { get { return new Vector4(g, g, r, g); } set { g = value.x; g = value.y; r = value.z; g = value.w; } }
+        public Vector4 ggrb { get { return new Vector4(g, g, r, b); } set { g = value.x; g = value.y; r = value.z; b = value.w; } }
+        public Vector4 gggr { get { return new Vector4(g, g, g, r); } set { g = value.x; g = value.y; g = value.z; r = value.w; } }
+        public Vector4 gggg { get { return new Vector4(g, g, g, g); } set { g = value.x; g = value.y; g = value.z; g = value.w; } }
+        public Vector4 gggb { get { return new Vector4(g, g, g, b); } set { g = value.x; g = value.y; g = value.z; b = value.w; } }
+        public Vector4 ggbr { get { return new Vector4(g, g, b, r); } set { g = value.x; g = value.y; b = value.z; r = value.w; } }
+        public Vector4 ggbg { get { return new Vector4(g, g, b, g); } set { g = value.x; g = value.y; b = value.z; g = value.w; } }
+        public Vector4 ggbb { get { return new Vector4(g, g, b, b); } set { g = value.x; g = value.y; b = value.z; b = value.w; } }
+        public Vector4 gbrr { get { return new Vector4(g, b, r, r); } set { g = value.x; b = value.y; r = value.z; r = value.w; } }
+        public Vector4 gbrg { get { return new Vector4(g, b, r, g); } set { g = value.x; b = value.y; r = value.z; g = value.w; } }
+        public Vector4 gbrb { get { return new Vector4(g, b, r, b); } set { g = value.x; b = value.y; r = value.z; b = value.w; } }
+        public Vector4 gbgr { get { return new Vector4(g, b, g, r); } set { g = value.x; b = value.y; g = value.z; r = value.w; } }
+        public Vector4 gbgg { get { return new Vector4(g, b, g, g); } set { g = value.x; b = value.y; g = value.z; g = value.w; } }
+        public Vector4 gbgb { get { return new Vector4(g, b, g, b); } set { g = value.x; b = value.y; g = value.z; b = value.w; } }
+        public Vector4 gbbr { get { return new Vector4(g, b, b, r); } set { g = value.x; b = value.y; b = value.z; r = value.w; } }
+        public Vector4 gbbg { get { return new Vector4(g, b, b, g); } set { g = value.x; b = value.y; b = value.z; g = value.w; } }
+        public Vector4 gbbb { get { return new Vector4(g, b, b, b); } set { g = value.x; b = value.y; b = value.z; b = value.w; } }
+        public Vector4 brrr { get { return new Vector4(b, r, r, r); } set { b = value.x; r = value.y; r = value.z; r = value.w; } }
+        public Vector4 brrg { get { return new Vector4(b, r, r, g); } set { b = value.x; r = value.y; r = value.z; g = value.w; } }
+        public Vector4 brrb { get { return new Vector4(b, r, r, b); } set { b = value.x; r = value.y; r = value.z; b = value.w; } }
+        public Vector4 brgr { get { return new Vector4(b, r, g, r); } set { b = value.x; r = value.y; g = value.z; r = value.w; } }
+        public Vector4 brgg { get { return new Vector4(b, r, g, g); } set { b = value.x; r = value.y; g = value.z; g = value.w; } }
+        public Vector4 brgb { get { return new Vector4(b, r, g, b); } set { b = value.x; r = value.y; g = value.z; b = value.w; } }
+        public Vector4 brbr { get { return new Vector4(b, r, b, r); } set { b = value.x; r = value.y; b = value.z; r = value.w; } }
+        public Vector4 brbg { get { return new Vector4(b, r, b, g); } set { b = value.x; r = value.y; b = value.z; g = value.w; } }
+        public Vector4 brbb { get { return new Vector4(b, r, b, b); } set { b = value.x; r = value.y; b = value.z; b = value.w; } }
+        public Vector4 bgrr { get { return new Vector4(b, g, r, r); } set { b = value.x; g = value.y; r = value.z; r = value.w; } }
+        public Vector4 bgrg { get { return new Vector4(b, g, r, g); } set { b = value.x; g = value.y; r = value.z; g = value.w; } }
+        public Vector4 bgrb { get { return new Vector4(b, g, r, b); } set { b = value.x; g = value.y; r = value.z; b = value.w; } }
+        public Vector4 bggr { get { return new Vector4(b, g, g, r); } set { b = value.x; g = value.y; g = value.z; r = value.w; } }
+        public Vector4 bggg { get { return new Vector4(b, g, g, g); } set { b = value.x; g = value.y; g = value.z; g = value.w; } }
+        public Vector4 bggb { get { return new Vector4(b, g, g, b); } set { b = value.x; g = value.y; g = value.z; b = value.w; } }
+        public Vector4 bgbr { get { return new Vector4(b, g, b, r); } set { b = value.x; g = value.y; b = value.z; r = value.w; } }
+        public Vector4 bgbg { get { return new Vector4(b, g, b, g); } set { b = value.x; g = value.y; b = value.z; g = value.w; } }
+        public Vector4 bgbb { get { return new Vector4(b, g, b, b); } set { b = value.x; g = value.y; b = value.z; b = value.w; } }
+        public Vector4 bbrr { get { return new Vector4(b, b, r, r); } set { b = value.x; b = value.y; r = value.z; r = value.w; } }
+        public Vector4 bbrg { get { return new Vector4(b, b, r, g); } set { b = value.x; b = value.y; r = value.z; g = value.w; } }
+        public Vector4 bbrb { get { return new Vector4(b, b, r, b); } set { b = value.x; b = value.y; r = value.z; b = value.w; } }
+        public Vector4 bbgr { get { return new Vector4(b, b, g, r); } set { b = value.x; b = value.y; g = value.z; r = value.w; } }
+        public Vector4 bbgg { get { return new Vector4(b, b, g, g); } set { b = value.x; b = value.y; g = value.z; g = value.w; } }
+        public Vector4 bbgb { get { return new Vector4(b, b, g, b); } set { b = value.x; b = value.y; g = value.z; b = value.w; } }
+        public Vector4 bbbr { get { return new Vector4(b, b, b, r); } set { b = value.x; b = value.y; b = value.z; r = value.w; } }
+        public Vector4 bbbg { get { return new Vector4(b, b, b, g); } set { b = value.x; b = value.y; b = value.z; g = value.w; } }
+        public Vector4 bbbb { get { return new Vector4(b, b, b, b); } set { b = value.x; b = value.y; b = value.z; b = value.w; } }
     }
 
     public struct Vector4 {
         public float x,y,z,w;
+
+        public float r { get { return this.x; } set { this.x = value; } }
+        public float g { get { return this.y; } set { this.y = value; } }
+        public float b { get { return this.z; } set { this.z = value; } }
+        public float a { get { return this.w; } set { this.w = value; } }
 
         // constructors
         public Vector4(float v0) { x = v0; y = 0; z = 0; w = 0; }
@@ -257,6 +414,22 @@ namespace ShaderTypes {
         public Vector2 wy { get { return new Vector2(w, y); } set { w = value.x; y = value.y; } }
         public Vector2 wz { get { return new Vector2(w, z); } set { w = value.x; z = value.y; } }
         public Vector2 ww { get { return new Vector2(w, w); } set { w = value.x; w = value.y; } }
+        public Vector2 rr { get { return new Vector2(r, r); } set { r = value.x; r = value.y; } }
+        public Vector2 rg { get { return new Vector2(r, g); } set { r = value.x; g = value.y; } }
+        public Vector2 rb { get { return new Vector2(r, b); } set { r = value.x; b = value.y; } }
+        public Vector2 ra { get { return new Vector2(r, a); } set { r = value.x; a = value.y; } }
+        public Vector2 gr { get { return new Vector2(g, r); } set { g = value.x; r = value.y; } }
+        public Vector2 gg { get { return new Vector2(g, g); } set { g = value.x; g = value.y; } }
+        public Vector2 gb { get { return new Vector2(g, b); } set { g = value.x; b = value.y; } }
+        public Vector2 ga { get { return new Vector2(g, a); } set { g = value.x; a = value.y; } }
+        public Vector2 br { get { return new Vector2(b, r); } set { b = value.x; r = value.y; } }
+        public Vector2 bg { get { return new Vector2(b, g); } set { b = value.x; g = value.y; } }
+        public Vector2 bb { get { return new Vector2(b, b); } set { b = value.x; b = value.y; } }
+        public Vector2 ba { get { return new Vector2(b, a); } set { b = value.x; a = value.y; } }
+        public Vector2 ar { get { return new Vector2(a, r); } set { a = value.x; r = value.y; } }
+        public Vector2 ag { get { return new Vector2(a, g); } set { a = value.x; g = value.y; } }
+        public Vector2 ab { get { return new Vector2(a, b); } set { a = value.x; b = value.y; } }
+        public Vector2 aa { get { return new Vector2(a, a); } set { a = value.x; a = value.y; } }
         public Vector3 xxx { get { return new Vector3(x, x, x); } set { x = value.x; x = value.y; x = value.z; } }
         public Vector3 xxy { get { return new Vector3(x, x, y); } set { x = value.x; x = value.y; y = value.z; } }
         public Vector3 xxz { get { return new Vector3(x, x, z); } set { x = value.x; x = value.y; z = value.z; } }
@@ -321,6 +494,70 @@ namespace ShaderTypes {
         public Vector3 wwy { get { return new Vector3(w, w, y); } set { w = value.x; w = value.y; y = value.z; } }
         public Vector3 wwz { get { return new Vector3(w, w, z); } set { w = value.x; w = value.y; z = value.z; } }
         public Vector3 www { get { return new Vector3(w, w, w); } set { w = value.x; w = value.y; w = value.z; } }
+        public Vector3 rrr { get { return new Vector3(r, r, r); } set { r = value.x; r = value.y; r = value.z; } }
+        public Vector3 rrg { get { return new Vector3(r, r, g); } set { r = value.x; r = value.y; g = value.z; } }
+        public Vector3 rrb { get { return new Vector3(r, r, b); } set { r = value.x; r = value.y; b = value.z; } }
+        public Vector3 rra { get { return new Vector3(r, r, a); } set { r = value.x; r = value.y; a = value.z; } }
+        public Vector3 rgr { get { return new Vector3(r, g, r); } set { r = value.x; g = value.y; r = value.z; } }
+        public Vector3 rgg { get { return new Vector3(r, g, g); } set { r = value.x; g = value.y; g = value.z; } }
+        public Vector3 rgb { get { return new Vector3(r, g, b); } set { r = value.x; g = value.y; b = value.z; } }
+        public Vector3 rga { get { return new Vector3(r, g, a); } set { r = value.x; g = value.y; a = value.z; } }
+        public Vector3 rbr { get { return new Vector3(r, b, r); } set { r = value.x; b = value.y; r = value.z; } }
+        public Vector3 rbg { get { return new Vector3(r, b, g); } set { r = value.x; b = value.y; g = value.z; } }
+        public Vector3 rbb { get { return new Vector3(r, b, b); } set { r = value.x; b = value.y; b = value.z; } }
+        public Vector3 rba { get { return new Vector3(r, b, a); } set { r = value.x; b = value.y; a = value.z; } }
+        public Vector3 rar { get { return new Vector3(r, a, r); } set { r = value.x; a = value.y; r = value.z; } }
+        public Vector3 rag { get { return new Vector3(r, a, g); } set { r = value.x; a = value.y; g = value.z; } }
+        public Vector3 rab { get { return new Vector3(r, a, b); } set { r = value.x; a = value.y; b = value.z; } }
+        public Vector3 raa { get { return new Vector3(r, a, a); } set { r = value.x; a = value.y; a = value.z; } }
+        public Vector3 grr { get { return new Vector3(g, r, r); } set { g = value.x; r = value.y; r = value.z; } }
+        public Vector3 grg { get { return new Vector3(g, r, g); } set { g = value.x; r = value.y; g = value.z; } }
+        public Vector3 grb { get { return new Vector3(g, r, b); } set { g = value.x; r = value.y; b = value.z; } }
+        public Vector3 gra { get { return new Vector3(g, r, a); } set { g = value.x; r = value.y; a = value.z; } }
+        public Vector3 ggr { get { return new Vector3(g, g, r); } set { g = value.x; g = value.y; r = value.z; } }
+        public Vector3 ggg { get { return new Vector3(g, g, g); } set { g = value.x; g = value.y; g = value.z; } }
+        public Vector3 ggb { get { return new Vector3(g, g, b); } set { g = value.x; g = value.y; b = value.z; } }
+        public Vector3 gga { get { return new Vector3(g, g, a); } set { g = value.x; g = value.y; a = value.z; } }
+        public Vector3 gbr { get { return new Vector3(g, b, r); } set { g = value.x; b = value.y; r = value.z; } }
+        public Vector3 gbg { get { return new Vector3(g, b, g); } set { g = value.x; b = value.y; g = value.z; } }
+        public Vector3 gbb { get { return new Vector3(g, b, b); } set { g = value.x; b = value.y; b = value.z; } }
+        public Vector3 gba { get { return new Vector3(g, b, a); } set { g = value.x; b = value.y; a = value.z; } }
+        public Vector3 gar { get { return new Vector3(g, a, r); } set { g = value.x; a = value.y; r = value.z; } }
+        public Vector3 gag { get { return new Vector3(g, a, g); } set { g = value.x; a = value.y; g = value.z; } }
+        public Vector3 gab { get { return new Vector3(g, a, b); } set { g = value.x; a = value.y; b = value.z; } }
+        public Vector3 gaa { get { return new Vector3(g, a, a); } set { g = value.x; a = value.y; a = value.z; } }
+        public Vector3 brr { get { return new Vector3(b, r, r); } set { b = value.x; r = value.y; r = value.z; } }
+        public Vector3 brg { get { return new Vector3(b, r, g); } set { b = value.x; r = value.y; g = value.z; } }
+        public Vector3 brb { get { return new Vector3(b, r, b); } set { b = value.x; r = value.y; b = value.z; } }
+        public Vector3 bra { get { return new Vector3(b, r, a); } set { b = value.x; r = value.y; a = value.z; } }
+        public Vector3 bgr { get { return new Vector3(b, g, r); } set { b = value.x; g = value.y; r = value.z; } }
+        public Vector3 bgg { get { return new Vector3(b, g, g); } set { b = value.x; g = value.y; g = value.z; } }
+        public Vector3 bgb { get { return new Vector3(b, g, b); } set { b = value.x; g = value.y; b = value.z; } }
+        public Vector3 bga { get { return new Vector3(b, g, a); } set { b = value.x; g = value.y; a = value.z; } }
+        public Vector3 bbr { get { return new Vector3(b, b, r); } set { b = value.x; b = value.y; r = value.z; } }
+        public Vector3 bbg { get { return new Vector3(b, b, g); } set { b = value.x; b = value.y; g = value.z; } }
+        public Vector3 bbb { get { return new Vector3(b, b, b); } set { b = value.x; b = value.y; b = value.z; } }
+        public Vector3 bba { get { return new Vector3(b, b, a); } set { b = value.x; b = value.y; a = value.z; } }
+        public Vector3 bar { get { return new Vector3(b, a, r); } set { b = value.x; a = value.y; r = value.z; } }
+        public Vector3 bag { get { return new Vector3(b, a, g); } set { b = value.x; a = value.y; g = value.z; } }
+        public Vector3 bab { get { return new Vector3(b, a, b); } set { b = value.x; a = value.y; b = value.z; } }
+        public Vector3 baa { get { return new Vector3(b, a, a); } set { b = value.x; a = value.y; a = value.z; } }
+        public Vector3 arr { get { return new Vector3(a, r, r); } set { a = value.x; r = value.y; r = value.z; } }
+        public Vector3 arg { get { return new Vector3(a, r, g); } set { a = value.x; r = value.y; g = value.z; } }
+        public Vector3 arb { get { return new Vector3(a, r, b); } set { a = value.x; r = value.y; b = value.z; } }
+        public Vector3 ara { get { return new Vector3(a, r, a); } set { a = value.x; r = value.y; a = value.z; } }
+        public Vector3 agr { get { return new Vector3(a, g, r); } set { a = value.x; g = value.y; r = value.z; } }
+        public Vector3 agg { get { return new Vector3(a, g, g); } set { a = value.x; g = value.y; g = value.z; } }
+        public Vector3 agb { get { return new Vector3(a, g, b); } set { a = value.x; g = value.y; b = value.z; } }
+        public Vector3 aga { get { return new Vector3(a, g, a); } set { a = value.x; g = value.y; a = value.z; } }
+        public Vector3 abr { get { return new Vector3(a, b, r); } set { a = value.x; b = value.y; r = value.z; } }
+        public Vector3 abg { get { return new Vector3(a, b, g); } set { a = value.x; b = value.y; g = value.z; } }
+        public Vector3 abb { get { return new Vector3(a, b, b); } set { a = value.x; b = value.y; b = value.z; } }
+        public Vector3 aba { get { return new Vector3(a, b, a); } set { a = value.x; b = value.y; a = value.z; } }
+        public Vector3 aar { get { return new Vector3(a, a, r); } set { a = value.x; a = value.y; r = value.z; } }
+        public Vector3 aag { get { return new Vector3(a, a, g); } set { a = value.x; a = value.y; g = value.z; } }
+        public Vector3 aab { get { return new Vector3(a, a, b); } set { a = value.x; a = value.y; b = value.z; } }
+        public Vector3 aaa { get { return new Vector3(a, a, a); } set { a = value.x; a = value.y; a = value.z; } }
         public Vector4 xxxx { get { return new Vector4(x, x, x, x); } set { x = value.x; x = value.y; x = value.z; x = value.w; } }
         public Vector4 xxxy { get { return new Vector4(x, x, x, y); } set { x = value.x; x = value.y; x = value.z; y = value.w; } }
         public Vector4 xxxz { get { return new Vector4(x, x, x, z); } set { x = value.x; x = value.y; x = value.z; z = value.w; } }
@@ -577,6 +814,262 @@ namespace ShaderTypes {
         public Vector4 wwwy { get { return new Vector4(w, w, w, y); } set { w = value.x; w = value.y; w = value.z; y = value.w; } }
         public Vector4 wwwz { get { return new Vector4(w, w, w, z); } set { w = value.x; w = value.y; w = value.z; z = value.w; } }
         public Vector4 wwww { get { return new Vector4(w, w, w, w); } set { w = value.x; w = value.y; w = value.z; w = value.w; } }
+        public Vector4 rrrr { get { return new Vector4(r, r, r, r); } set { r = value.x; r = value.y; r = value.z; r = value.w; } }
+        public Vector4 rrrg { get { return new Vector4(r, r, r, g); } set { r = value.x; r = value.y; r = value.z; g = value.w; } }
+        public Vector4 rrrb { get { return new Vector4(r, r, r, b); } set { r = value.x; r = value.y; r = value.z; b = value.w; } }
+        public Vector4 rrra { get { return new Vector4(r, r, r, a); } set { r = value.x; r = value.y; r = value.z; a = value.w; } }
+        public Vector4 rrgr { get { return new Vector4(r, r, g, r); } set { r = value.x; r = value.y; g = value.z; r = value.w; } }
+        public Vector4 rrgg { get { return new Vector4(r, r, g, g); } set { r = value.x; r = value.y; g = value.z; g = value.w; } }
+        public Vector4 rrgb { get { return new Vector4(r, r, g, b); } set { r = value.x; r = value.y; g = value.z; b = value.w; } }
+        public Vector4 rrga { get { return new Vector4(r, r, g, a); } set { r = value.x; r = value.y; g = value.z; a = value.w; } }
+        public Vector4 rrbr { get { return new Vector4(r, r, b, r); } set { r = value.x; r = value.y; b = value.z; r = value.w; } }
+        public Vector4 rrbg { get { return new Vector4(r, r, b, g); } set { r = value.x; r = value.y; b = value.z; g = value.w; } }
+        public Vector4 rrbb { get { return new Vector4(r, r, b, b); } set { r = value.x; r = value.y; b = value.z; b = value.w; } }
+        public Vector4 rrba { get { return new Vector4(r, r, b, a); } set { r = value.x; r = value.y; b = value.z; a = value.w; } }
+        public Vector4 rrar { get { return new Vector4(r, r, a, r); } set { r = value.x; r = value.y; a = value.z; r = value.w; } }
+        public Vector4 rrag { get { return new Vector4(r, r, a, g); } set { r = value.x; r = value.y; a = value.z; g = value.w; } }
+        public Vector4 rrab { get { return new Vector4(r, r, a, b); } set { r = value.x; r = value.y; a = value.z; b = value.w; } }
+        public Vector4 rraa { get { return new Vector4(r, r, a, a); } set { r = value.x; r = value.y; a = value.z; a = value.w; } }
+        public Vector4 rgrr { get { return new Vector4(r, g, r, r); } set { r = value.x; g = value.y; r = value.z; r = value.w; } }
+        public Vector4 rgrg { get { return new Vector4(r, g, r, g); } set { r = value.x; g = value.y; r = value.z; g = value.w; } }
+        public Vector4 rgrb { get { return new Vector4(r, g, r, b); } set { r = value.x; g = value.y; r = value.z; b = value.w; } }
+        public Vector4 rgra { get { return new Vector4(r, g, r, a); } set { r = value.x; g = value.y; r = value.z; a = value.w; } }
+        public Vector4 rggr { get { return new Vector4(r, g, g, r); } set { r = value.x; g = value.y; g = value.z; r = value.w; } }
+        public Vector4 rggg { get { return new Vector4(r, g, g, g); } set { r = value.x; g = value.y; g = value.z; g = value.w; } }
+        public Vector4 rggb { get { return new Vector4(r, g, g, b); } set { r = value.x; g = value.y; g = value.z; b = value.w; } }
+        public Vector4 rgga { get { return new Vector4(r, g, g, a); } set { r = value.x; g = value.y; g = value.z; a = value.w; } }
+        public Vector4 rgbr { get { return new Vector4(r, g, b, r); } set { r = value.x; g = value.y; b = value.z; r = value.w; } }
+        public Vector4 rgbg { get { return new Vector4(r, g, b, g); } set { r = value.x; g = value.y; b = value.z; g = value.w; } }
+        public Vector4 rgbb { get { return new Vector4(r, g, b, b); } set { r = value.x; g = value.y; b = value.z; b = value.w; } }
+        public Vector4 rgba { get { return new Vector4(r, g, b, a); } set { r = value.x; g = value.y; b = value.z; a = value.w; } }
+        public Vector4 rgar { get { return new Vector4(r, g, a, r); } set { r = value.x; g = value.y; a = value.z; r = value.w; } }
+        public Vector4 rgag { get { return new Vector4(r, g, a, g); } set { r = value.x; g = value.y; a = value.z; g = value.w; } }
+        public Vector4 rgab { get { return new Vector4(r, g, a, b); } set { r = value.x; g = value.y; a = value.z; b = value.w; } }
+        public Vector4 rgaa { get { return new Vector4(r, g, a, a); } set { r = value.x; g = value.y; a = value.z; a = value.w; } }
+        public Vector4 rbrr { get { return new Vector4(r, b, r, r); } set { r = value.x; b = value.y; r = value.z; r = value.w; } }
+        public Vector4 rbrg { get { return new Vector4(r, b, r, g); } set { r = value.x; b = value.y; r = value.z; g = value.w; } }
+        public Vector4 rbrb { get { return new Vector4(r, b, r, b); } set { r = value.x; b = value.y; r = value.z; b = value.w; } }
+        public Vector4 rbra { get { return new Vector4(r, b, r, a); } set { r = value.x; b = value.y; r = value.z; a = value.w; } }
+        public Vector4 rbgr { get { return new Vector4(r, b, g, r); } set { r = value.x; b = value.y; g = value.z; r = value.w; } }
+        public Vector4 rbgg { get { return new Vector4(r, b, g, g); } set { r = value.x; b = value.y; g = value.z; g = value.w; } }
+        public Vector4 rbgb { get { return new Vector4(r, b, g, b); } set { r = value.x; b = value.y; g = value.z; b = value.w; } }
+        public Vector4 rbga { get { return new Vector4(r, b, g, a); } set { r = value.x; b = value.y; g = value.z; a = value.w; } }
+        public Vector4 rbbr { get { return new Vector4(r, b, b, r); } set { r = value.x; b = value.y; b = value.z; r = value.w; } }
+        public Vector4 rbbg { get { return new Vector4(r, b, b, g); } set { r = value.x; b = value.y; b = value.z; g = value.w; } }
+        public Vector4 rbbb { get { return new Vector4(r, b, b, b); } set { r = value.x; b = value.y; b = value.z; b = value.w; } }
+        public Vector4 rbba { get { return new Vector4(r, b, b, a); } set { r = value.x; b = value.y; b = value.z; a = value.w; } }
+        public Vector4 rbar { get { return new Vector4(r, b, a, r); } set { r = value.x; b = value.y; a = value.z; r = value.w; } }
+        public Vector4 rbag { get { return new Vector4(r, b, a, g); } set { r = value.x; b = value.y; a = value.z; g = value.w; } }
+        public Vector4 rbab { get { return new Vector4(r, b, a, b); } set { r = value.x; b = value.y; a = value.z; b = value.w; } }
+        public Vector4 rbaa { get { return new Vector4(r, b, a, a); } set { r = value.x; b = value.y; a = value.z; a = value.w; } }
+        public Vector4 rarr { get { return new Vector4(r, a, r, r); } set { r = value.x; a = value.y; r = value.z; r = value.w; } }
+        public Vector4 rarg { get { return new Vector4(r, a, r, g); } set { r = value.x; a = value.y; r = value.z; g = value.w; } }
+        public Vector4 rarb { get { return new Vector4(r, a, r, b); } set { r = value.x; a = value.y; r = value.z; b = value.w; } }
+        public Vector4 rara { get { return new Vector4(r, a, r, a); } set { r = value.x; a = value.y; r = value.z; a = value.w; } }
+        public Vector4 ragr { get { return new Vector4(r, a, g, r); } set { r = value.x; a = value.y; g = value.z; r = value.w; } }
+        public Vector4 ragg { get { return new Vector4(r, a, g, g); } set { r = value.x; a = value.y; g = value.z; g = value.w; } }
+        public Vector4 ragb { get { return new Vector4(r, a, g, b); } set { r = value.x; a = value.y; g = value.z; b = value.w; } }
+        public Vector4 raga { get { return new Vector4(r, a, g, a); } set { r = value.x; a = value.y; g = value.z; a = value.w; } }
+        public Vector4 rabr { get { return new Vector4(r, a, b, r); } set { r = value.x; a = value.y; b = value.z; r = value.w; } }
+        public Vector4 rabg { get { return new Vector4(r, a, b, g); } set { r = value.x; a = value.y; b = value.z; g = value.w; } }
+        public Vector4 rabb { get { return new Vector4(r, a, b, b); } set { r = value.x; a = value.y; b = value.z; b = value.w; } }
+        public Vector4 raba { get { return new Vector4(r, a, b, a); } set { r = value.x; a = value.y; b = value.z; a = value.w; } }
+        public Vector4 raar { get { return new Vector4(r, a, a, r); } set { r = value.x; a = value.y; a = value.z; r = value.w; } }
+        public Vector4 raag { get { return new Vector4(r, a, a, g); } set { r = value.x; a = value.y; a = value.z; g = value.w; } }
+        public Vector4 raab { get { return new Vector4(r, a, a, b); } set { r = value.x; a = value.y; a = value.z; b = value.w; } }
+        public Vector4 raaa { get { return new Vector4(r, a, a, a); } set { r = value.x; a = value.y; a = value.z; a = value.w; } }
+        public Vector4 grrr { get { return new Vector4(g, r, r, r); } set { g = value.x; r = value.y; r = value.z; r = value.w; } }
+        public Vector4 grrg { get { return new Vector4(g, r, r, g); } set { g = value.x; r = value.y; r = value.z; g = value.w; } }
+        public Vector4 grrb { get { return new Vector4(g, r, r, b); } set { g = value.x; r = value.y; r = value.z; b = value.w; } }
+        public Vector4 grra { get { return new Vector4(g, r, r, a); } set { g = value.x; r = value.y; r = value.z; a = value.w; } }
+        public Vector4 grgr { get { return new Vector4(g, r, g, r); } set { g = value.x; r = value.y; g = value.z; r = value.w; } }
+        public Vector4 grgg { get { return new Vector4(g, r, g, g); } set { g = value.x; r = value.y; g = value.z; g = value.w; } }
+        public Vector4 grgb { get { return new Vector4(g, r, g, b); } set { g = value.x; r = value.y; g = value.z; b = value.w; } }
+        public Vector4 grga { get { return new Vector4(g, r, g, a); } set { g = value.x; r = value.y; g = value.z; a = value.w; } }
+        public Vector4 grbr { get { return new Vector4(g, r, b, r); } set { g = value.x; r = value.y; b = value.z; r = value.w; } }
+        public Vector4 grbg { get { return new Vector4(g, r, b, g); } set { g = value.x; r = value.y; b = value.z; g = value.w; } }
+        public Vector4 grbb { get { return new Vector4(g, r, b, b); } set { g = value.x; r = value.y; b = value.z; b = value.w; } }
+        public Vector4 grba { get { return new Vector4(g, r, b, a); } set { g = value.x; r = value.y; b = value.z; a = value.w; } }
+        public Vector4 grar { get { return new Vector4(g, r, a, r); } set { g = value.x; r = value.y; a = value.z; r = value.w; } }
+        public Vector4 grag { get { return new Vector4(g, r, a, g); } set { g = value.x; r = value.y; a = value.z; g = value.w; } }
+        public Vector4 grab { get { return new Vector4(g, r, a, b); } set { g = value.x; r = value.y; a = value.z; b = value.w; } }
+        public Vector4 graa { get { return new Vector4(g, r, a, a); } set { g = value.x; r = value.y; a = value.z; a = value.w; } }
+        public Vector4 ggrr { get { return new Vector4(g, g, r, r); } set { g = value.x; g = value.y; r = value.z; r = value.w; } }
+        public Vector4 ggrg { get { return new Vector4(g, g, r, g); } set { g = value.x; g = value.y; r = value.z; g = value.w; } }
+        public Vector4 ggrb { get { return new Vector4(g, g, r, b); } set { g = value.x; g = value.y; r = value.z; b = value.w; } }
+        public Vector4 ggra { get { return new Vector4(g, g, r, a); } set { g = value.x; g = value.y; r = value.z; a = value.w; } }
+        public Vector4 gggr { get { return new Vector4(g, g, g, r); } set { g = value.x; g = value.y; g = value.z; r = value.w; } }
+        public Vector4 gggg { get { return new Vector4(g, g, g, g); } set { g = value.x; g = value.y; g = value.z; g = value.w; } }
+        public Vector4 gggb { get { return new Vector4(g, g, g, b); } set { g = value.x; g = value.y; g = value.z; b = value.w; } }
+        public Vector4 ggga { get { return new Vector4(g, g, g, a); } set { g = value.x; g = value.y; g = value.z; a = value.w; } }
+        public Vector4 ggbr { get { return new Vector4(g, g, b, r); } set { g = value.x; g = value.y; b = value.z; r = value.w; } }
+        public Vector4 ggbg { get { return new Vector4(g, g, b, g); } set { g = value.x; g = value.y; b = value.z; g = value.w; } }
+        public Vector4 ggbb { get { return new Vector4(g, g, b, b); } set { g = value.x; g = value.y; b = value.z; b = value.w; } }
+        public Vector4 ggba { get { return new Vector4(g, g, b, a); } set { g = value.x; g = value.y; b = value.z; a = value.w; } }
+        public Vector4 ggar { get { return new Vector4(g, g, a, r); } set { g = value.x; g = value.y; a = value.z; r = value.w; } }
+        public Vector4 ggag { get { return new Vector4(g, g, a, g); } set { g = value.x; g = value.y; a = value.z; g = value.w; } }
+        public Vector4 ggab { get { return new Vector4(g, g, a, b); } set { g = value.x; g = value.y; a = value.z; b = value.w; } }
+        public Vector4 ggaa { get { return new Vector4(g, g, a, a); } set { g = value.x; g = value.y; a = value.z; a = value.w; } }
+        public Vector4 gbrr { get { return new Vector4(g, b, r, r); } set { g = value.x; b = value.y; r = value.z; r = value.w; } }
+        public Vector4 gbrg { get { return new Vector4(g, b, r, g); } set { g = value.x; b = value.y; r = value.z; g = value.w; } }
+        public Vector4 gbrb { get { return new Vector4(g, b, r, b); } set { g = value.x; b = value.y; r = value.z; b = value.w; } }
+        public Vector4 gbra { get { return new Vector4(g, b, r, a); } set { g = value.x; b = value.y; r = value.z; a = value.w; } }
+        public Vector4 gbgr { get { return new Vector4(g, b, g, r); } set { g = value.x; b = value.y; g = value.z; r = value.w; } }
+        public Vector4 gbgg { get { return new Vector4(g, b, g, g); } set { g = value.x; b = value.y; g = value.z; g = value.w; } }
+        public Vector4 gbgb { get { return new Vector4(g, b, g, b); } set { g = value.x; b = value.y; g = value.z; b = value.w; } }
+        public Vector4 gbga { get { return new Vector4(g, b, g, a); } set { g = value.x; b = value.y; g = value.z; a = value.w; } }
+        public Vector4 gbbr { get { return new Vector4(g, b, b, r); } set { g = value.x; b = value.y; b = value.z; r = value.w; } }
+        public Vector4 gbbg { get { return new Vector4(g, b, b, g); } set { g = value.x; b = value.y; b = value.z; g = value.w; } }
+        public Vector4 gbbb { get { return new Vector4(g, b, b, b); } set { g = value.x; b = value.y; b = value.z; b = value.w; } }
+        public Vector4 gbba { get { return new Vector4(g, b, b, a); } set { g = value.x; b = value.y; b = value.z; a = value.w; } }
+        public Vector4 gbar { get { return new Vector4(g, b, a, r); } set { g = value.x; b = value.y; a = value.z; r = value.w; } }
+        public Vector4 gbag { get { return new Vector4(g, b, a, g); } set { g = value.x; b = value.y; a = value.z; g = value.w; } }
+        public Vector4 gbab { get { return new Vector4(g, b, a, b); } set { g = value.x; b = value.y; a = value.z; b = value.w; } }
+        public Vector4 gbaa { get { return new Vector4(g, b, a, a); } set { g = value.x; b = value.y; a = value.z; a = value.w; } }
+        public Vector4 garr { get { return new Vector4(g, a, r, r); } set { g = value.x; a = value.y; r = value.z; r = value.w; } }
+        public Vector4 garg { get { return new Vector4(g, a, r, g); } set { g = value.x; a = value.y; r = value.z; g = value.w; } }
+        public Vector4 garb { get { return new Vector4(g, a, r, b); } set { g = value.x; a = value.y; r = value.z; b = value.w; } }
+        public Vector4 gara { get { return new Vector4(g, a, r, a); } set { g = value.x; a = value.y; r = value.z; a = value.w; } }
+        public Vector4 gagr { get { return new Vector4(g, a, g, r); } set { g = value.x; a = value.y; g = value.z; r = value.w; } }
+        public Vector4 gagg { get { return new Vector4(g, a, g, g); } set { g = value.x; a = value.y; g = value.z; g = value.w; } }
+        public Vector4 gagb { get { return new Vector4(g, a, g, b); } set { g = value.x; a = value.y; g = value.z; b = value.w; } }
+        public Vector4 gaga { get { return new Vector4(g, a, g, a); } set { g = value.x; a = value.y; g = value.z; a = value.w; } }
+        public Vector4 gabr { get { return new Vector4(g, a, b, r); } set { g = value.x; a = value.y; b = value.z; r = value.w; } }
+        public Vector4 gabg { get { return new Vector4(g, a, b, g); } set { g = value.x; a = value.y; b = value.z; g = value.w; } }
+        public Vector4 gabb { get { return new Vector4(g, a, b, b); } set { g = value.x; a = value.y; b = value.z; b = value.w; } }
+        public Vector4 gaba { get { return new Vector4(g, a, b, a); } set { g = value.x; a = value.y; b = value.z; a = value.w; } }
+        public Vector4 gaar { get { return new Vector4(g, a, a, r); } set { g = value.x; a = value.y; a = value.z; r = value.w; } }
+        public Vector4 gaag { get { return new Vector4(g, a, a, g); } set { g = value.x; a = value.y; a = value.z; g = value.w; } }
+        public Vector4 gaab { get { return new Vector4(g, a, a, b); } set { g = value.x; a = value.y; a = value.z; b = value.w; } }
+        public Vector4 gaaa { get { return new Vector4(g, a, a, a); } set { g = value.x; a = value.y; a = value.z; a = value.w; } }
+        public Vector4 brrr { get { return new Vector4(b, r, r, r); } set { b = value.x; r = value.y; r = value.z; r = value.w; } }
+        public Vector4 brrg { get { return new Vector4(b, r, r, g); } set { b = value.x; r = value.y; r = value.z; g = value.w; } }
+        public Vector4 brrb { get { return new Vector4(b, r, r, b); } set { b = value.x; r = value.y; r = value.z; b = value.w; } }
+        public Vector4 brra { get { return new Vector4(b, r, r, a); } set { b = value.x; r = value.y; r = value.z; a = value.w; } }
+        public Vector4 brgr { get { return new Vector4(b, r, g, r); } set { b = value.x; r = value.y; g = value.z; r = value.w; } }
+        public Vector4 brgg { get { return new Vector4(b, r, g, g); } set { b = value.x; r = value.y; g = value.z; g = value.w; } }
+        public Vector4 brgb { get { return new Vector4(b, r, g, b); } set { b = value.x; r = value.y; g = value.z; b = value.w; } }
+        public Vector4 brga { get { return new Vector4(b, r, g, a); } set { b = value.x; r = value.y; g = value.z; a = value.w; } }
+        public Vector4 brbr { get { return new Vector4(b, r, b, r); } set { b = value.x; r = value.y; b = value.z; r = value.w; } }
+        public Vector4 brbg { get { return new Vector4(b, r, b, g); } set { b = value.x; r = value.y; b = value.z; g = value.w; } }
+        public Vector4 brbb { get { return new Vector4(b, r, b, b); } set { b = value.x; r = value.y; b = value.z; b = value.w; } }
+        public Vector4 brba { get { return new Vector4(b, r, b, a); } set { b = value.x; r = value.y; b = value.z; a = value.w; } }
+        public Vector4 brar { get { return new Vector4(b, r, a, r); } set { b = value.x; r = value.y; a = value.z; r = value.w; } }
+        public Vector4 brag { get { return new Vector4(b, r, a, g); } set { b = value.x; r = value.y; a = value.z; g = value.w; } }
+        public Vector4 brab { get { return new Vector4(b, r, a, b); } set { b = value.x; r = value.y; a = value.z; b = value.w; } }
+        public Vector4 braa { get { return new Vector4(b, r, a, a); } set { b = value.x; r = value.y; a = value.z; a = value.w; } }
+        public Vector4 bgrr { get { return new Vector4(b, g, r, r); } set { b = value.x; g = value.y; r = value.z; r = value.w; } }
+        public Vector4 bgrg { get { return new Vector4(b, g, r, g); } set { b = value.x; g = value.y; r = value.z; g = value.w; } }
+        public Vector4 bgrb { get { return new Vector4(b, g, r, b); } set { b = value.x; g = value.y; r = value.z; b = value.w; } }
+        public Vector4 bgra { get { return new Vector4(b, g, r, a); } set { b = value.x; g = value.y; r = value.z; a = value.w; } }
+        public Vector4 bggr { get { return new Vector4(b, g, g, r); } set { b = value.x; g = value.y; g = value.z; r = value.w; } }
+        public Vector4 bggg { get { return new Vector4(b, g, g, g); } set { b = value.x; g = value.y; g = value.z; g = value.w; } }
+        public Vector4 bggb { get { return new Vector4(b, g, g, b); } set { b = value.x; g = value.y; g = value.z; b = value.w; } }
+        public Vector4 bgga { get { return new Vector4(b, g, g, a); } set { b = value.x; g = value.y; g = value.z; a = value.w; } }
+        public Vector4 bgbr { get { return new Vector4(b, g, b, r); } set { b = value.x; g = value.y; b = value.z; r = value.w; } }
+        public Vector4 bgbg { get { return new Vector4(b, g, b, g); } set { b = value.x; g = value.y; b = value.z; g = value.w; } }
+        public Vector4 bgbb { get { return new Vector4(b, g, b, b); } set { b = value.x; g = value.y; b = value.z; b = value.w; } }
+        public Vector4 bgba { get { return new Vector4(b, g, b, a); } set { b = value.x; g = value.y; b = value.z; a = value.w; } }
+        public Vector4 bgar { get { return new Vector4(b, g, a, r); } set { b = value.x; g = value.y; a = value.z; r = value.w; } }
+        public Vector4 bgag { get { return new Vector4(b, g, a, g); } set { b = value.x; g = value.y; a = value.z; g = value.w; } }
+        public Vector4 bgab { get { return new Vector4(b, g, a, b); } set { b = value.x; g = value.y; a = value.z; b = value.w; } }
+        public Vector4 bgaa { get { return new Vector4(b, g, a, a); } set { b = value.x; g = value.y; a = value.z; a = value.w; } }
+        public Vector4 bbrr { get { return new Vector4(b, b, r, r); } set { b = value.x; b = value.y; r = value.z; r = value.w; } }
+        public Vector4 bbrg { get { return new Vector4(b, b, r, g); } set { b = value.x; b = value.y; r = value.z; g = value.w; } }
+        public Vector4 bbrb { get { return new Vector4(b, b, r, b); } set { b = value.x; b = value.y; r = value.z; b = value.w; } }
+        public Vector4 bbra { get { return new Vector4(b, b, r, a); } set { b = value.x; b = value.y; r = value.z; a = value.w; } }
+        public Vector4 bbgr { get { return new Vector4(b, b, g, r); } set { b = value.x; b = value.y; g = value.z; r = value.w; } }
+        public Vector4 bbgg { get { return new Vector4(b, b, g, g); } set { b = value.x; b = value.y; g = value.z; g = value.w; } }
+        public Vector4 bbgb { get { return new Vector4(b, b, g, b); } set { b = value.x; b = value.y; g = value.z; b = value.w; } }
+        public Vector4 bbga { get { return new Vector4(b, b, g, a); } set { b = value.x; b = value.y; g = value.z; a = value.w; } }
+        public Vector4 bbbr { get { return new Vector4(b, b, b, r); } set { b = value.x; b = value.y; b = value.z; r = value.w; } }
+        public Vector4 bbbg { get { return new Vector4(b, b, b, g); } set { b = value.x; b = value.y; b = value.z; g = value.w; } }
+        public Vector4 bbbb { get { return new Vector4(b, b, b, b); } set { b = value.x; b = value.y; b = value.z; b = value.w; } }
+        public Vector4 bbba { get { return new Vector4(b, b, b, a); } set { b = value.x; b = value.y; b = value.z; a = value.w; } }
+        public Vector4 bbar { get { return new Vector4(b, b, a, r); } set { b = value.x; b = value.y; a = value.z; r = value.w; } }
+        public Vector4 bbag { get { return new Vector4(b, b, a, g); } set { b = value.x; b = value.y; a = value.z; g = value.w; } }
+        public Vector4 bbab { get { return new Vector4(b, b, a, b); } set { b = value.x; b = value.y; a = value.z; b = value.w; } }
+        public Vector4 bbaa { get { return new Vector4(b, b, a, a); } set { b = value.x; b = value.y; a = value.z; a = value.w; } }
+        public Vector4 barr { get { return new Vector4(b, a, r, r); } set { b = value.x; a = value.y; r = value.z; r = value.w; } }
+        public Vector4 barg { get { return new Vector4(b, a, r, g); } set { b = value.x; a = value.y; r = value.z; g = value.w; } }
+        public Vector4 barb { get { return new Vector4(b, a, r, b); } set { b = value.x; a = value.y; r = value.z; b = value.w; } }
+        public Vector4 bara { get { return new Vector4(b, a, r, a); } set { b = value.x; a = value.y; r = value.z; a = value.w; } }
+        public Vector4 bagr { get { return new Vector4(b, a, g, r); } set { b = value.x; a = value.y; g = value.z; r = value.w; } }
+        public Vector4 bagg { get { return new Vector4(b, a, g, g); } set { b = value.x; a = value.y; g = value.z; g = value.w; } }
+        public Vector4 bagb { get { return new Vector4(b, a, g, b); } set { b = value.x; a = value.y; g = value.z; b = value.w; } }
+        public Vector4 baga { get { return new Vector4(b, a, g, a); } set { b = value.x; a = value.y; g = value.z; a = value.w; } }
+        public Vector4 babr { get { return new Vector4(b, a, b, r); } set { b = value.x; a = value.y; b = value.z; r = value.w; } }
+        public Vector4 babg { get { return new Vector4(b, a, b, g); } set { b = value.x; a = value.y; b = value.z; g = value.w; } }
+        public Vector4 babb { get { return new Vector4(b, a, b, b); } set { b = value.x; a = value.y; b = value.z; b = value.w; } }
+        public Vector4 baba { get { return new Vector4(b, a, b, a); } set { b = value.x; a = value.y; b = value.z; a = value.w; } }
+        public Vector4 baar { get { return new Vector4(b, a, a, r); } set { b = value.x; a = value.y; a = value.z; r = value.w; } }
+        public Vector4 baag { get { return new Vector4(b, a, a, g); } set { b = value.x; a = value.y; a = value.z; g = value.w; } }
+        public Vector4 baab { get { return new Vector4(b, a, a, b); } set { b = value.x; a = value.y; a = value.z; b = value.w; } }
+        public Vector4 baaa { get { return new Vector4(b, a, a, a); } set { b = value.x; a = value.y; a = value.z; a = value.w; } }
+        public Vector4 arrr { get { return new Vector4(a, r, r, r); } set { a = value.x; r = value.y; r = value.z; r = value.w; } }
+        public Vector4 arrg { get { return new Vector4(a, r, r, g); } set { a = value.x; r = value.y; r = value.z; g = value.w; } }
+        public Vector4 arrb { get { return new Vector4(a, r, r, b); } set { a = value.x; r = value.y; r = value.z; b = value.w; } }
+        public Vector4 arra { get { return new Vector4(a, r, r, a); } set { a = value.x; r = value.y; r = value.z; a = value.w; } }
+        public Vector4 argr { get { return new Vector4(a, r, g, r); } set { a = value.x; r = value.y; g = value.z; r = value.w; } }
+        public Vector4 argg { get { return new Vector4(a, r, g, g); } set { a = value.x; r = value.y; g = value.z; g = value.w; } }
+        public Vector4 argb { get { return new Vector4(a, r, g, b); } set { a = value.x; r = value.y; g = value.z; b = value.w; } }
+        public Vector4 arga { get { return new Vector4(a, r, g, a); } set { a = value.x; r = value.y; g = value.z; a = value.w; } }
+        public Vector4 arbr { get { return new Vector4(a, r, b, r); } set { a = value.x; r = value.y; b = value.z; r = value.w; } }
+        public Vector4 arbg { get { return new Vector4(a, r, b, g); } set { a = value.x; r = value.y; b = value.z; g = value.w; } }
+        public Vector4 arbb { get { return new Vector4(a, r, b, b); } set { a = value.x; r = value.y; b = value.z; b = value.w; } }
+        public Vector4 arba { get { return new Vector4(a, r, b, a); } set { a = value.x; r = value.y; b = value.z; a = value.w; } }
+        public Vector4 arar { get { return new Vector4(a, r, a, r); } set { a = value.x; r = value.y; a = value.z; r = value.w; } }
+        public Vector4 arag { get { return new Vector4(a, r, a, g); } set { a = value.x; r = value.y; a = value.z; g = value.w; } }
+        public Vector4 arab { get { return new Vector4(a, r, a, b); } set { a = value.x; r = value.y; a = value.z; b = value.w; } }
+        public Vector4 araa { get { return new Vector4(a, r, a, a); } set { a = value.x; r = value.y; a = value.z; a = value.w; } }
+        public Vector4 agrr { get { return new Vector4(a, g, r, r); } set { a = value.x; g = value.y; r = value.z; r = value.w; } }
+        public Vector4 agrg { get { return new Vector4(a, g, r, g); } set { a = value.x; g = value.y; r = value.z; g = value.w; } }
+        public Vector4 agrb { get { return new Vector4(a, g, r, b); } set { a = value.x; g = value.y; r = value.z; b = value.w; } }
+        public Vector4 agra { get { return new Vector4(a, g, r, a); } set { a = value.x; g = value.y; r = value.z; a = value.w; } }
+        public Vector4 aggr { get { return new Vector4(a, g, g, r); } set { a = value.x; g = value.y; g = value.z; r = value.w; } }
+        public Vector4 aggg { get { return new Vector4(a, g, g, g); } set { a = value.x; g = value.y; g = value.z; g = value.w; } }
+        public Vector4 aggb { get { return new Vector4(a, g, g, b); } set { a = value.x; g = value.y; g = value.z; b = value.w; } }
+        public Vector4 agga { get { return new Vector4(a, g, g, a); } set { a = value.x; g = value.y; g = value.z; a = value.w; } }
+        public Vector4 agbr { get { return new Vector4(a, g, b, r); } set { a = value.x; g = value.y; b = value.z; r = value.w; } }
+        public Vector4 agbg { get { return new Vector4(a, g, b, g); } set { a = value.x; g = value.y; b = value.z; g = value.w; } }
+        public Vector4 agbb { get { return new Vector4(a, g, b, b); } set { a = value.x; g = value.y; b = value.z; b = value.w; } }
+        public Vector4 agba { get { return new Vector4(a, g, b, a); } set { a = value.x; g = value.y; b = value.z; a = value.w; } }
+        public Vector4 agar { get { return new Vector4(a, g, a, r); } set { a = value.x; g = value.y; a = value.z; r = value.w; } }
+        public Vector4 agag { get { return new Vector4(a, g, a, g); } set { a = value.x; g = value.y; a = value.z; g = value.w; } }
+        public Vector4 agab { get { return new Vector4(a, g, a, b); } set { a = value.x; g = value.y; a = value.z; b = value.w; } }
+        public Vector4 agaa { get { return new Vector4(a, g, a, a); } set { a = value.x; g = value.y; a = value.z; a = value.w; } }
+        public Vector4 abrr { get { return new Vector4(a, b, r, r); } set { a = value.x; b = value.y; r = value.z; r = value.w; } }
+        public Vector4 abrg { get { return new Vector4(a, b, r, g); } set { a = value.x; b = value.y; r = value.z; g = value.w; } }
+        public Vector4 abrb { get { return new Vector4(a, b, r, b); } set { a = value.x; b = value.y; r = value.z; b = value.w; } }
+        public Vector4 abra { get { return new Vector4(a, b, r, a); } set { a = value.x; b = value.y; r = value.z; a = value.w; } }
+        public Vector4 abgr { get { return new Vector4(a, b, g, r); } set { a = value.x; b = value.y; g = value.z; r = value.w; } }
+        public Vector4 abgg { get { return new Vector4(a, b, g, g); } set { a = value.x; b = value.y; g = value.z; g = value.w; } }
+        public Vector4 abgb { get { return new Vector4(a, b, g, b); } set { a = value.x; b = value.y; g = value.z; b = value.w; } }
+        public Vector4 abga { get { return new Vector4(a, b, g, a); } set { a = value.x; b = value.y; g = value.z; a = value.w; } }
+        public Vector4 abbr { get { return new Vector4(a, b, b, r); } set { a = value.x; b = value.y; b = value.z; r = value.w; } }
+        public Vector4 abbg { get { return new Vector4(a, b, b, g); } set { a = value.x; b = value.y; b = value.z; g = value.w; } }
+        public Vector4 abbb { get { return new Vector4(a, b, b, b); } set { a = value.x; b = value.y; b = value.z; b = value.w; } }
+        public Vector4 abba { get { return new Vector4(a, b, b, a); } set { a = value.x; b = value.y; b = value.z; a = value.w; } }
+        public Vector4 abar { get { return new Vector4(a, b, a, r); } set { a = value.x; b = value.y; a = value.z; r = value.w; } }
+        public Vector4 abag { get { return new Vector4(a, b, a, g); } set { a = value.x; b = value.y; a = value.z; g = value.w; } }
+        public Vector4 abab { get { return new Vector4(a, b, a, b); } set { a = value.x; b = value.y; a = value.z; b = value.w; } }
+        public Vector4 abaa { get { return new Vector4(a, b, a, a); } set { a = value.x; b = value.y; a = value.z; a = value.w; } }
+        public Vector4 aarr { get { return new Vector4(a, a, r, r); } set { a = value.x; a = value.y; r = value.z; r = value.w; } }
+        public Vector4 aarg { get { return new Vector4(a, a, r, g); } set { a = value.x; a = value.y; r = value.z; g = value.w; } }
+        public Vector4 aarb { get { return new Vector4(a, a, r, b); } set { a = value.x; a = value.y; r = value.z; b = value.w; } }
+        public Vector4 aara { get { return new Vector4(a, a, r, a); } set { a = value.x; a = value.y; r = value.z; a = value.w; } }
+        public Vector4 aagr { get { return new Vector4(a, a, g, r); } set { a = value.x; a = value.y; g = value.z; r = value.w; } }
+        public Vector4 aagg { get { return new Vector4(a, a, g, g); } set { a = value.x; a = value.y; g = value.z; g = value.w; } }
+        public Vector4 aagb { get { return new Vector4(a, a, g, b); } set { a = value.x; a = value.y; g = value.z; b = value.w; } }
+        public Vector4 aaga { get { return new Vector4(a, a, g, a); } set { a = value.x; a = value.y; g = value.z; a = value.w; } }
+        public Vector4 aabr { get { return new Vector4(a, a, b, r); } set { a = value.x; a = value.y; b = value.z; r = value.w; } }
+        public Vector4 aabg { get { return new Vector4(a, a, b, g); } set { a = value.x; a = value.y; b = value.z; g = value.w; } }
+        public Vector4 aabb { get { return new Vector4(a, a, b, b); } set { a = value.x; a = value.y; b = value.z; b = value.w; } }
+        public Vector4 aaba { get { return new Vector4(a, a, b, a); } set { a = value.x; a = value.y; b = value.z; a = value.w; } }
+        public Vector4 aaar { get { return new Vector4(a, a, a, r); } set { a = value.x; a = value.y; a = value.z; r = value.w; } }
+        public Vector4 aaag { get { return new Vector4(a, a, a, g); } set { a = value.x; a = value.y; a = value.z; g = value.w; } }
+        public Vector4 aaab { get { return new Vector4(a, a, a, b); } set { a = value.x; a = value.y; a = value.z; b = value.w; } }
+        public Vector4 aaaa { get { return new Vector4(a, a, a, a); } set { a = value.x; a = value.y; a = value.z; a = value.w; } }
     }
 
 }

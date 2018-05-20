@@ -128,11 +128,26 @@ for (let i = 2; i <= 4; i ++) {
 
     // extension size
     const fields = vecfields.slice(0, i);
+    const cfields = colfields.slice(0, i);
 
     let structdef =
 `
     public struct Vector${ i } {
         public float ${ fields.join() };
+
+${
+    // getters and setters for rgb fields
+    fields
+        .map((v, i) => {
+
+            const getter = `get { return this.${ fields[i] }; }`;
+            const setter = `set { this.${ fields[i] } = value; }`;
+
+            return `        public float ${ cfields[i] } { ${ getter } ${ setter } }`;
+
+        })
+        .join('\n')
+}
 
         // constructors
 ${ generateConstructors(fields).map(c => '        ' + c).join('\n') }
@@ -155,6 +170,12 @@ ${ operators.map(op => '        ' + toOperatorFunction(fields, op)).join('\n') }
 
         structdef += 
             getElementCombinations(fields, v)
+                .map(arr => `        ${ elementsToFunction(arr, i) }`)
+                .join('\n')
+                 + '\n';
+
+        structdef += 
+            getElementCombinations(cfields, v)
                 .map(arr => `        ${ elementsToFunction(arr, i) }`)
                 .join('\n')
                  + '\n';
