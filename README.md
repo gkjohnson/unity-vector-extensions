@@ -21,9 +21,9 @@ Convenience getters and setters are provided for getting and setting subvectors 
 
 ```cs
 Vector4 v;
-v.xxx;  // Vector3
-v.yx;   // Vector2
-v.wxyx; // Vector4
+v.xxx;  v.rrr; // Vector3
+v.yx;   v.gr;  // Vector2
+v.wxyx; v.argr // Vector4
 ```
 
 ### Per-element Vector Operators
